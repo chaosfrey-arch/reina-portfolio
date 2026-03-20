@@ -1,0 +1,379 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+  <meta name="description" content="Reina / 贺睿 — AI Product Management, LLM Researcher, Decision Architect.">
+  <title>Reina · 贺睿 — AI Product Management</title>
+
+  <!-- Preconnect for fonts -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Syne:wght@400;600;700;800&family=Outfit:wght@300;400;500;600&family=JetBrains+Mono:wght@400;500&family=Noto+Sans+SC:wght@300;400;500;700&display=swap" rel="stylesheet">
+
+  <link rel="stylesheet" href="css/style.css">
+</head>
+<body>
+
+<!-- ══════════════════════════════════════════════════
+     CANVAS BACKGROUND
+══════════════════════════════════════════════════ -->
+<!-- Scroll progress bar -->
+<div class="scroll-progress" id="scroll-progress" aria-hidden="true"></div>
+
+<canvas id="bg-canvas" aria-hidden="true"></canvas>
+
+<!-- ══════════════════════════════════════════════════
+     NAVIGATION
+══════════════════════════════════════════════════ -->
+<nav class="nav" role="navigation" aria-label="Primary navigation">
+  <div class="nav-logo">HR</div>
+
+  <ul class="nav-links" role="list">
+    <li><a href="#journey"      class="nav-link" data-section="journey"      data-idx="0">Journey</a></li>
+    <li><a href="#projects"     class="nav-link" data-section="projects"     data-idx="1">Projects</a></li>
+    <li><a href="#llm-hub"      class="nav-link" data-section="llm-hub"      data-idx="2">LLM Hub</a></li>
+    <li><a href="#ai-feed"      class="nav-link" data-section="ai-feed"      data-idx="3">AI Feed</a></li>
+    <li><a href="#github-pulse" class="nav-link" data-section="github-pulse" data-idx="4">GitHub</a></li>
+  </ul>
+
+  <div class="lang-toggle" role="group" aria-label="Language toggle">
+    <button class="lang-btn active" data-lang="en" aria-label="Switch to English">EN</button>
+    <button class="lang-btn"        data-lang="zh" aria-label="切换至中文">CN</button>
+  </div>
+</nav>
+
+<!-- Section navigation dots -->
+<nav class="section-nav" aria-label="Section navigation" aria-hidden="true">
+  <div class="section-dot active" data-target="hero"         title="Hero"></div>
+  <div class="section-dot"        data-target="journey"      title="Journey"></div>
+  <div class="section-dot"        data-target="projects"     title="Projects"></div>
+  <div class="section-dot"        data-target="llm-hub"      title="LLM Hub"></div>
+  <div class="section-dot"        data-target="ai-feed"      title="AI Feed"></div>
+  <div class="section-dot"        data-target="github-pulse" title="GitHub Pulse"></div>
+</nav>
+
+<main>
+
+<!-- ══════════════════════════════════════════════════
+     § 0 — HERO
+══════════════════════════════════════════════════ -->
+<section id="hero" aria-labelledby="hero-heading">
+  <div class="hero-inner">
+
+    <!-- Left: text content -->
+    <div class="hero-text">
+      <div class="hero-eyebrow">
+        <span class="hero-eyebrow-line" aria-hidden="true"></span>
+        <span id="hero-eyebrow-text">Durham · ex-Baidu · 2026</span>
+      </div>
+
+      <h1 class="hero-name" id="hero-heading">
+        <span class="name-zh">贺睿</span>
+        <span class="name-en"><span class="name-sep" aria-hidden="true">/</span>Reina</span>
+      </h1>
+
+      <p class="hero-desc" id="hero-desc">
+        <span id="hero-desc-top">On the path to AGI — curious about what comes next.</span><br>
+        <span class="hero-desc-accent" id="hero-desc-accent">I build things to figure out why.</span>
+      </p>
+
+      <div class="hero-cta">
+        <a href="#projects" class="btn-primary">
+          <span id="cta-primary-text">View Projects</span>
+          <span aria-hidden="true">→</span>
+        </a>
+        <a href="贺睿_杜伦大学_数据科学专业.pdf" class="btn-ghost" download>
+          <span id="cta-ghost-text">Download Résumé</span>
+        </a>
+      </div>
+
+      <!-- Stats strip -->
+      <div class="hero-stats" aria-label="Key metrics">
+        <div class="stat-item">
+          <span class="stat-val mono" data-target="9">0</span>
+          <span class="stat-label" data-i18n="stat_models">Models Evaluated</span>
+        </div>
+        <div class="stat-divider" aria-hidden="true"></div>
+        <div class="stat-item">
+          <span class="stat-val mono" data-target="3">0</span>
+          <span class="stat-label" data-i18n="stat_reports">Reports Published</span>
+        </div>
+        <div class="stat-divider" aria-hidden="true"></div>
+        <div class="stat-item">
+          <span class="stat-val mono" data-target="15">0</span><span class="stat-unit accent">K+</span>
+          <span class="stat-label" data-i18n="stat_reads">Enterprise Reads</span>
+        </div>
+        <div class="stat-divider" aria-hidden="true"></div>
+        <div class="stat-item">
+          <span class="stat-val mono" data-target="82">0</span><span class="stat-unit accent">%</span>
+          <span class="stat-label" data-i18n="stat_acc">ML Accuracy</span>
+        </div>
+      </div>
+    </div>
+
+    <!-- Right: photo -->
+    <div class="hero-photo-side" aria-hidden="true">
+      <div class="hero-photo-frame">
+        <img src="个人照片.jpg" alt="贺睿 / Reina — portrait">
+        <div class="photo-corner tl"></div>
+        <div class="photo-corner tr"></div>
+        <div class="photo-corner bl"></div>
+        <div class="photo-corner br"></div>
+        <div class="photo-scan"></div>
+        <div class="photo-crosshair"></div>
+      </div>
+      <div class="photo-meta">
+        <span class="mono">SUBJECT · REINA</span>
+        <span class="mono accent">// DURHAM · CN</span>
+      </div>
+    </div>
+
+  </div>
+
+  <div class="hero-scroll" aria-hidden="true">
+    <div class="hero-scroll-line"></div>
+    <span>SCROLL</span>
+  </div>
+</section>
+
+<!-- ══════════════════════════════════════════════════
+     § 1 — THE JOURNEY
+══════════════════════════════════════════════════ -->
+<section id="journey" class="section" aria-labelledby="journey-heading">
+  <div class="section-header fade-up">
+    <div class="section-num" aria-hidden="true">01</div>
+    <h2 class="section-title" id="journey-heading">THE JOURNEY</h2>
+    <p class="section-subtitle" id="journey-subtitle">From business foundations to the frontier of AI product engineering.</p>
+  </div>
+
+  <div class="timeline" role="list" aria-label="Career timeline">
+    <div class="timeline-spine" aria-hidden="true"></div>
+    <div class="timeline-progress-bar" aria-hidden="true"></div>
+    <div id="timeline-items">
+      <!-- Populated by JS -->
+    </div>
+  </div>
+</section>
+
+<!-- ══════════════════════════════════════════════════
+     § 2 — PROJECT NEXUS
+══════════════════════════════════════════════════ -->
+<section id="projects" class="section" aria-labelledby="projects-heading">
+  <div class="section-header fade-up">
+    <div class="section-num" aria-hidden="true">02</div>
+    <h2 class="section-title" id="projects-heading">PROJECT NEXUS</h2>
+    <p class="section-subtitle" id="projects-subtitle">Systems built at the intersection of physics, intelligence, and interaction.</p>
+  </div>
+
+  <div class="projects-stack">
+    <!-- Featured: GraviChoice -->
+    <article class="project-featured fade-up" aria-label="Featured project: GraviChoice">
+      <div class="project-body">
+        <div>
+          <div class="project-label" id="feat-label">Featured · Physics × AI</div>
+          <h3 class="project-title" id="feat-title">GraviChoice</h3>
+          <p class="project-desc" id="feat-desc">
+            A decision assistant that maps your pros and cons into weighted spheres, then lets physics decide.
+            GLM-5.0 analyzes semantic weight; Matter.js simulates gravity on a balance scale.
+          </p>
+          <div class="tech-chips" id="feat-tech">
+            <span class="tech-chip">Matter.js 0.19</span>
+            <span class="tech-chip">GLM-5.0 API</span>
+            <span class="tech-chip">Vanilla JS</span>
+            <span class="tech-chip">Vercel</span>
+          </div>
+        </div>
+        <a href="GraviChoice_决策助手/index.html" class="project-link" id="feat-link">View Project →</a>
+      </div>
+
+      <!-- Physics scale SVG animation -->
+      <div class="project-canvas" aria-hidden="true">
+        <svg class="physics-scale" viewBox="0 0 300 260" fill="none" xmlns="http://www.w3.org/2000/svg">
+          <!-- Pivot post -->
+          <rect x="148" y="80" width="4" height="120" fill="oklch(35% 0.025 255)"/>
+          <!-- Base -->
+          <rect x="100" y="198" width="100" height="4" rx="2" fill="oklch(35% 0.025 255)"/>
+          <!-- Beam group (animated) -->
+          <g class="scale-beam" transform-origin="150 90">
+            <rect x="60" y="88" width="180" height="3" rx="1.5" fill="oklch(72% 0.16 48)"/>
+            <!-- Left chain -->
+            <line x1="80"  y1="91" x2="80"  y2="138" stroke="oklch(48% 0.012 255)" stroke-width="1.2"/>
+            <!-- Right chain -->
+            <line x1="220" y1="91" x2="220" y2="138" stroke="oklch(48% 0.012 255)" stroke-width="1.2"/>
+          </g>
+          <!-- Left pan (animated) -->
+          <g class="scale-pan-l" transform-origin="80 150">
+            <ellipse cx="80" cy="148" rx="28" ry="8" fill="oklch(20% 0.016 255)" stroke="oklch(35% 0.025 255)" stroke-width="1.2"/>
+            <!-- Weight balls -->
+            <circle cx="72" cy="138" r="9" fill="oklch(55% 0.12 48)" opacity="0.9"/>
+            <circle cx="88" cy="136" r="6" fill="oklch(55% 0.12 48)" opacity="0.7"/>
+          </g>
+          <!-- Right pan (animated) -->
+          <g class="scale-pan-r" transform-origin="220 150">
+            <ellipse cx="220" cy="148" rx="28" ry="8" fill="oklch(20% 0.016 255)" stroke="oklch(35% 0.025 255)" stroke-width="1.2"/>
+            <!-- Lighter weight -->
+            <circle cx="220" cy="138" r="7" fill="oklch(55% 0.12 48)" opacity="0.7"/>
+          </g>
+        </svg>
+      </div>
+    </article>
+
+    <!-- Secondary: Texas Hold'em + ML Research -->
+    <div class="projects-secondary">
+      <article class="project-card fade-up delay-1">
+        <div class="project-label" id="proj-label-0">Game · React · AI</div>
+        <h3 class="project-title" id="proj-title-0">Texas Hold'em Pro</h3>
+        <p class="project-desc" id="proj-desc-0">
+          7-player Texas Hold'em with AI opponents. Full game loop — chip tracking, blind structure,
+          hand rankings, and a tutorial system. Built in React 18 via CDN, no build step.
+        </p>
+        <div class="tech-chips" id="proj-tech-0">
+          <span class="tech-chip">React 18</span>
+          <span class="tech-chip">Tailwind CSS</span>
+          <span class="tech-chip">Babel/JSX</span>
+        </div>
+      </article>
+
+      <article class="project-card fade-up delay-2">
+        <div class="project-label" id="proj-label-1">Research · ML · Streamlit</div>
+        <h3 class="project-title" id="proj-title-1">Academic Tendency Predictor</h3>
+        <p class="project-desc" id="proj-desc-1">
+          Random Forest vs XGBoost for predicting student outcomes. Feature importance via SHAP values.
+          82%+ accuracy with K-Fold validation. Deployed as interactive Streamlit app.
+        </p>
+        <div class="tech-chips" id="proj-tech-1">
+          <span class="tech-chip">XGBoost</span>
+          <span class="tech-chip">scikit-learn</span>
+          <span class="tech-chip">SHAP</span>
+          <span class="tech-chip">Streamlit</span>
+        </div>
+      </article>
+    </div>
+  </div>
+</section>
+
+<!-- ══════════════════════════════════════════════════
+     § 3 — LLM INTELLIGENCE HUB
+══════════════════════════════════════════════════ -->
+<section id="llm-hub" class="section" aria-labelledby="llm-heading">
+  <div class="section-header fade-up">
+    <div class="section-num" aria-hidden="true">03</div>
+    <h2 class="section-title" id="llm-heading">LLM INTELLIGENCE HUB</h2>
+    <p class="section-subtitle" id="llm-subtitle">Authoritative benchmark data from LMSYS Chatbot Arena, HuggingFace Open LLM Leaderboard, and LiveCodeBench.</p>
+  </div>
+
+  <div class="llm-grid">
+    <!-- Left: Table -->
+    <div>
+      <div class="llm-tabs" role="tablist">
+        <button class="llm-tab active" data-tab="arena" id="tab-arena" role="tab" aria-selected="true">Arena Elo</button>
+        <button class="llm-tab"        data-tab="bench" id="tab-bench" role="tab" aria-selected="false">Multi-Benchmark</button>
+      </div>
+
+      <div class="table-wrap fade-up">
+        <table class="bench-table" aria-label="LLM benchmark comparison">
+          <thead>
+            <tr>
+              <th data-col="name">Model <span class="sort-arrow">↕</span></th>
+              <th>Org</th>
+              <th data-col="elo" class="sorted">Arena Elo <span class="sort-arrow">↓</span></th>
+              <th data-col="mmlu">MMLU <span class="sort-arrow">↕</span></th>
+              <th data-col="humaneval">HumanEval <span class="sort-arrow">↕</span></th>
+              <th data-col="math">MATH <span class="sort-arrow">↕</span></th>
+            </tr>
+          </thead>
+          <tbody id="llm-tbody">
+            <!-- Populated by JS -->
+          </tbody>
+        </table>
+      </div>
+
+      <p class="llm-footnote fade-up delay-2" id="llm-footnote">
+        Data sourced from LMSYS Chatbot Arena leaderboard, HuggingFace Open LLM Leaderboard, and published model technical reports.
+        Scores are approximate and reflect the state of publicly available benchmarks at time of collection.
+      </p>
+    </div>
+
+    <!-- Right: Radar Chart -->
+    <aside class="radar-panel fade-up delay-2" aria-label="Model capability radar chart">
+      <div class="radar-label" id="radar-label">Capability Radar</div>
+      <canvas id="radar-canvas" role="img" aria-label="Hexagonal radar chart comparing LLM capabilities across 6 dimensions"></canvas>
+      <div class="radar-legend" id="radar-legend" role="list" aria-label="Model legend — click to toggle">
+        <!-- Populated by JS -->
+      </div>
+    </aside>
+  </div>
+</section>
+
+<!-- ══════════════════════════════════════════════════
+     § 4 — AI CURATED FEED
+══════════════════════════════════════════════════ -->
+<section id="ai-feed" class="section" aria-labelledby="feed-heading">
+  <div class="section-header fade-up">
+    <div class="section-num" aria-hidden="true">04</div>
+    <h2 class="section-title" id="feed-heading">AI CURATED FEED</h2>
+    <p class="section-subtitle" id="feed-subtitle">Thinkers, builders, and voices shaping the intelligence frontier. Kept in original language.</p>
+  </div>
+
+  <div class="feed-block">
+    <div class="feed-heading" id="feed-heading-people">Thought Leaders</div>
+    <div class="thinkers-grid" id="thinkers-grid" role="list">
+      <!-- Populated by JS -->
+    </div>
+  </div>
+
+  <div class="feed-block">
+    <div class="feed-heading" id="feed-heading-podcasts">Essential Listening</div>
+    <div class="podcast-list" id="podcast-list" role="list">
+      <!-- Populated by JS -->
+    </div>
+  </div>
+</section>
+
+<!-- ══════════════════════════════════════════════════
+     § 5 — GITHUB PULSE
+══════════════════════════════════════════════════ -->
+<section id="github-pulse" class="section" aria-labelledby="github-heading">
+  <div class="section-header fade-up">
+    <div class="section-num" aria-hidden="true">05</div>
+    <h2 class="section-title" id="github-heading">GITHUB PULSE</h2>
+    <p class="section-subtitle" id="github-subtitle">Trending AI repositories, live from the GitHub API.</p>
+  </div>
+
+  <div class="pulse-header">
+    <div class="live-indicator">
+      <div class="live-dot" aria-hidden="true"></div>
+      <span id="live-label">LIVE DATA</span>
+    </div>
+  </div>
+
+  <div class="pulse-tabs" role="tablist">
+    <button class="pulse-tab active" data-topic="llm"        id="tab-llm"   role="tab">LLM</button>
+    <button class="pulse-tab"        data-topic="agent"      id="tab-agent" role="tab">Agents</button>
+    <button class="pulse-tab"        data-topic="multimodal" id="tab-mm"    role="tab">Multimodal</button>
+  </div>
+
+  <div class="repos-grid" id="repos-grid" aria-live="polite" aria-label="GitHub trending repositories">
+    <!-- Populated by JS -->
+  </div>
+</section>
+
+</main>
+
+<!-- ══════════════════════════════════════════════════
+     FOOTER
+══════════════════════════════════════════════════ -->
+<footer role="contentinfo">
+  <p class="footer-copy" id="footer-copy">© 2026 He Rui · Built with precision</p>
+  <nav class="footer-links" aria-label="Contact links">
+    <a href="mailto:chaosfrey@gmail.com" class="footer-link">chaosfrey@gmail.com</a>
+    <a href="https://github.com/chaosfrey-arch" class="footer-link" target="_blank" rel="noopener">GitHub</a>
+  </nav>
+</footer>
+
+<!-- Scripts — data first, then app -->
+<script src="js/data.js"></script>
+<script src="js/main.js"></script>
+</body>
+</html>

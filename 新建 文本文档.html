@@ -1,0 +1,202 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Texas Hold'em Pro - 极速开局</title>
+    <script src="https://unpkg.com/react@18/umd/react.production.min.js"></script>
+    <script src="https://unpkg.com/react-dom@18/umd/react-dom.production.min.js"></script>
+    <script src="https://unpkg.com/@babel/standalone/babel.min.js"></script>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/4.1.1/animate.min.css" rel="stylesheet">
+    <style>
+        @import url('https://fonts.googleapis.com/css2?family=Inter:wght@400;700;900&display=swap');
+        body { font-family: 'Inter', sans-serif; background-color: #0f172a; overflow: hidden; }
+        .poker-table { background: radial-gradient(circle, #065f46 0%, #064e3b 100%); border: 12px solid #451a03; box-shadow: inset 0 0 50px rgba(0,0,0,0.5); }
+        .card-shadow { box-shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.5); }
+    </style>
+</head>
+<body>
+    <div id="root"></div>
+
+    <script type="text/babel">
+        const { useState, useEffect } = React;
+
+        const VALUES = ['2', '3', '4', '5', '6', '7', '8', '9', '10', 'J', 'Q', 'K', 'A'];
+        const SUITS = ['♠', '♥', '♣', '♦'];
+
+        const App = () => {
+            const [view, setView] = useState('login'); // login, lobby, game, tutorial
+            const [user, setUser] = useState({ name: '游客', chips: 5000 });
+            const [gameStage, setGameStage] = useState('waiting'); // waiting, preflop, flop...
+            const [pot, setPot] = useState(0);
+            const [players, setPlayers] = useState([]);
+
+            // 1. 登录逻辑
+            const handleLogin = (name) => {
+                setUser({ ...user, name });
+                setView('lobby');
+            };
+
+            // 2. 初始化7人局 (1人+6AI)
+            const startFastGame = () => {
+                const initialPlayers = [
+                    { id: 0, name: user.name, chips: user.chips, cards: [], isBot: false, active: true, bet: 0 },
+                    ...Array.from({ length: 6 }).map((_, i) => ({
+                        id: i + 1, name: `AI 机器人 ${i + 1}`, chips: 2000, cards: [], isBot: true, active: true, bet: 0
+                    }))
+                ];
+                setPlayers(initialPlayers);
+                setView('game');
+                setGameStage('preflop');
+                setPot(200); // 假设基础底池
+            };
+
+            return (
+                <div className="h-screen w-full relative overflow-hidden">
+                    {view === 'login' && <LoginView onLogin={handleLogin} onTutorial={() => setView('tutorial')} />}
+                    {view === 'lobby' && <LobbyView user={user} onStart={startFastGame} />}
+                    {view === 'game' && <GameView players={players} pot={pot} onExit={() => setView('lobby')} />}
+                    {view === 'tutorial' && <TutorialView onClose={() => setView('login')} />}
+                </div>
+            );
+        };
+
+        const LoginView = ({ onLogin, onTutorial }) => (
+            <div className="h-full flex flex-col items-center justify-center bg-slate-900 text-white animate__animated animate__fadeIn">
+                <div className="mb-8 text-center">
+                    <h1 className="text-6xl font-black italic tracking-tighter text-yellow-500 mb-2">TEXAS HOLD'EM</h1>
+                    <p className="text-slate-400">至尊德州扑克竞技场</p>
+                </div>
+                <div className="bg-slate-800 p-8 rounded-2xl shadow-2xl w-80 flex flex-col gap-4 border border-slate-700">
+                    <input id="nameInput" type="text" placeholder="输入昵称" className="bg-slate-900 border border-slate-600 p-3 rounded-lg focus:outline-none focus:border-yellow-500 text-center" />
+                    <button onClick={() => onLogin(document.getElementById('nameInput').value || '匿名大亨')} className="bg-yellow-500 hover:bg-yellow-400 text-black font-bold p-3 rounded-lg transition-all active:scale-95">快速开始</button>
+                    <button onClick={onTutorial} className="text-slate-400 hover:text-white text-sm transition">如何玩？查看规则</button>
+                </div>
+            </div>
+        );
+
+        const LobbyView = ({ user, onStart }) => (
+            <div className="h-full flex flex-col items-center justify-center bg-slate-900 text-white p-6">
+                <div className="w-full max-w-2xl flex justify-between items-center mb-12">
+                    <div className="flex items-center gap-4">
+                        <div className="w-16 h-16 bg-yellow-500 rounded-full flex items-center justify-center text-black font-bold text-2xl uppercase">{user.name[0]}</div>
+                        <div>
+                            <h2 className="text-xl font-bold">{user.name}</h2>
+                            <p className="text-yellow-500 font-mono">余额: ${user.chips}</p>
+                        </div>
+                    </div>
+                    <div className="text-right">
+                        <p className="text-xs text-slate-500">胜率: 68%</p>
+                        <p className="text-xs text-slate-500">全球排名: #1,204</p>
+                    </div>
+                </div>
+                <div className="grid grid-cols-2 gap-6 w-full max-w-2xl">
+                    <button onClick={onStart} className="h-40 bg-emerald-600 hover:bg-emerald-500 rounded-2xl flex flex-col items-center justify-center gap-2 transition-transform hover:scale-105 group border-b-4 border-emerald-800">
+                        <span className="text-4xl">🃏</span>
+                        <span className="font-bold text-xl uppercase tracking-widest">快速加入游戏</span>
+                        <span className="text-xs opacity-70">自动补齐AI，即刻开局</span>
+                    </button>
+                    <div className="h-40 bg-slate-800 border border-slate-700 rounded-2xl flex flex-col items-center justify-center opacity-50 cursor-not-allowed">
+                        <span className="text-4xl">👥</span>
+                        <span className="font-bold text-xl uppercase tracking-widest">邀请好友</span>
+                        <span className="text-xs text-red-400">该功能在Pro版中开放</span>
+                    </div>
+                </div>
+            </div>
+        );
+
+        const GameView = ({ players, pot, onExit }) => (
+            <div className="h-full flex flex-col items-center justify-center bg-slate-900 p-4">
+                {/* 顶栏 */}
+                <div className="absolute top-6 left-6 right-6 flex justify-between">
+                    <button onClick={onExit} className="bg-slate-800/80 p-2 px-4 rounded-full text-white text-xs hover:bg-red-900 transition">退出房间</button>
+                    <div className="bg-black/40 px-6 py-2 rounded-full border border-white/10 text-yellow-500 font-bold">奖池 POT: ${pot}</div>
+                </div>
+
+                {/* 牌桌主体 */}
+                <div className="relative w-full max-w-5xl aspect-[2/1] poker-table rounded-[200px] flex items-center justify-center">
+                    {/* 公共牌 */}
+                    <div className="flex gap-2">
+                        {[1,2,3].map(i => <Card key={i} suit="♠" val="?" faceUp={false} />)}
+                        <div className="w-16 h-24 border-2 border-dashed border-white/10 rounded-lg"></div>
+                        <div className="w-16 h-24 border-2 border-dashed border-white/10 rounded-lg"></div>
+                    </div>
+
+                    {/* 7个座位环形布局 */}
+                    {players.map((p, i) => {
+                        const angle = (i * (360 / 7) + 90) * (Math.PI / 180);
+                        const x = Math.cos(angle) * 45;
+                        const y = Math.sin(angle) * 40;
+                        return (
+                            <div key={p.id} className="absolute flex flex-col items-center transition-all duration-700" style={{ left: `${50 + x}%`, top: `${50 + y}%`, transform: 'translate(-50%, -50%)' }}>
+                                <div className={`w-16 h-16 rounded-full border-4 ${p.isBot ? 'border-slate-700 bg-slate-800' : 'border-yellow-500 bg-slate-900'} shadow-xl flex items-center justify-center relative`}>
+                                    <span className="text-[10px] font-bold text-white truncate px-1">{p.name}</span>
+                                    {p.isBot && <div className="absolute -top-1 -right-1 bg-blue-500 text-[8px] px-1 rounded">AI</div>}
+                                </div>
+                                <div className="mt-1 bg-black/60 px-2 rounded-full text-[10px] text-yellow-500 font-mono">${p.chips}</div>
+                                {!p.isBot && (
+                                    <div className="flex gap-1 mt-2">
+                                        <Card suit="♥" val="A" mini />
+                                        <Card suit="♠" val="K" mini />
+                                    </div>
+                                )}
+                            </div>
+                        );
+                    })}
+                </div>
+
+                {/* 操作栏 */}
+                <div className="mt-12 flex gap-4 bg-slate-800/50 p-6 rounded-3xl border border-white/5 backdrop-blur-md">
+                    <button className="bg-red-700 hover:bg-red-600 px-8 py-3 rounded-xl font-bold shadow-lg transition active:scale-95">弃牌 FOLD</button>
+                    <button className="bg-slate-600 hover:bg-slate-500 px-8 py-3 rounded-xl font-bold shadow-lg transition active:scale-95">跟注 CALL</button>
+                    <button className="bg-emerald-600 hover:bg-emerald-500 px-12 py-3 rounded-xl font-black text-xl shadow-[0_0_20px_rgba(16,185,129,0.3)] transition active:scale-95 uppercase">加注 RAISE</button>
+                </div>
+            </div>
+        );
+
+        const Card = ({ suit, val, faceUp = true, mini = false }) => (
+            <div className={`${mini ? 'w-8 h-12 text-xs' : 'w-16 h-24 text-xl'} ${faceUp ? 'bg-white text-black' : 'bg-blue-900 border-2 border-white/20'} rounded-lg flex flex-col items-center justify-center font-bold shadow-2xl animate__animated animate__flipInY`}>
+                {faceUp ? (
+                    <>
+                        <span className={suit === '♥' || suit === '♦' ? 'text-red-600' : ''}>{val}</span>
+                        <span className={suit === '♥' || suit === '♦' ? 'text-red-600' : ''}>{suit}</span>
+                    </>
+                ) : (
+                    <div className="w-full h-full bg-[url('https://www.transparenttextures.com/patterns/carbon-fibre.png')] opacity-20"></div>
+                )}
+            </div>
+        );
+
+        const TutorialView = ({ onClose }) => (
+            <div className="h-full bg-slate-900 p-8 text-white overflow-y-auto">
+                <button onClick={onClose} className="mb-8 text-yellow-500 font-bold">← 返回登录</button>
+                <div className="max-w-2xl mx-auto">
+                    <h2 className="text-4xl font-black mb-6 uppercase tracking-tighter">德州扑克新手教学</h2>
+                    <div className="space-y-8">
+                        <section className="bg-slate-800 p-6 rounded-xl border-l-4 border-yellow-500">
+                            <h3 className="text-xl font-bold mb-2">1. 基础规则</h3>
+                            <p className="text-slate-400">每位玩家发2张底牌，桌面发5张公共牌。你需要用这7张牌中最好的5张组合成你的手牌。</p>
+                        </section>
+                        <section className="bg-slate-800 p-6 rounded-xl">
+                            <h3 className="text-xl font-bold mb-4">2. 牌型大小 (由强到弱)</h3>
+                            <ul className="grid grid-cols-2 gap-4 text-sm">
+                                <li>✨ 皇家同花顺 (Royal Flush)</li>
+                                <li>🔥 同花顺 (Straight Flush)</li>
+                                <li>💎 四条 (Four of a Kind)</li>
+                                <li>🏠 葫芦 (Full House)</li>
+                                <li>🌈 同花 (Flush)</li>
+                                <li>📏 顺子 (Straight)</li>
+                            </ul>
+                        </section>
+                        <button onClick={onClose} className="w-full bg-yellow-500 text-black p-4 rounded-xl font-black uppercase">我懂了，去赢钱！</button>
+                    </div>
+                </div>
+            </div>
+        );
+
+        const root = ReactDOM.createRoot(document.getElementById('root'));
+        root.render(<App />);
+    </script>
+</body>
+</html>
