@@ -15,10 +15,10 @@ const CONTENT = {
       name_zh: '贺睿',
       name_sep: '/',
       name_en: 'Reina',
-      desc_line1: 'Something about AI keeps me up at night —',
-      desc_line2: 'it scores 95% on benchmarks and then',
-      desc_line3: 'stumbles in the simplest real conversations.',
-      desc_accent: 'I build things to figure out why.',
+      desc_line1: 'AI is rewriting the order of intelligence.',
+      desc_line2: '',
+      desc_line3: '"The iPhone moment of AI is here."',
+      desc_accent: '— Jensen Huang, NVIDIA CEO',
       cta_primary: 'View Projects',
       cta_ghost: 'Download Résumé',
       scroll_hint: 'SCROLL'
@@ -44,7 +44,7 @@ const CONTENT = {
         },
         {
           date: '2024.01 — 2025.02',
-          org: 'Shanghai Zhixiang Business Services',
+          org: 'Shanghai Zhixianghui Business Services',
           role: 'Research Consultant — AI SaaS Hiring Intelligence',
           body: 'Led a full-cycle research program evaluating AI recruitment tools. Conducted 20+ in-depth interviews, processed 1,000+ survey responses with Python/Pandas, and published three reports reaching 15,000+ enterprise readers.',
           metrics: ['20+ Expert Interviews', '1000+ Survey Responses', '3 Published Reports', '15k+ Reads']
@@ -127,10 +127,10 @@ const CONTENT = {
       name_zh: '贺睿',
       name_sep: '/',
       name_en: 'Reina',
-      desc_line1: '有个问题困扰了我很久——',
-      desc_line2: '为什么榜单上分数很高的模型，',
-      desc_line3: '在最普通的真实对话里却频频翻车？',
-      desc_accent: '我在用做东西的方式找答案。',
+      desc_line1: 'AI 正在重写智能的秩序。',
+      desc_line2: '',
+      desc_line3: '「AI 的 iPhone 时刻，已经到来。」',
+      desc_accent: '— 黄仁勋，英伟达 CEO',
       cta_primary: '查看项目',
       cta_ghost: '下载简历',
       scroll_hint: '滚动'
@@ -156,7 +156,7 @@ const CONTENT = {
         },
         {
           date: '2024.01 — 2025.02',
-          org: '上海智翔商务服务',
+          org: '上海智享会商务服务',
           role: '咨询顾问 — AI SaaS招聘智能',
           body: '主导AI招聘工具全周期研究项目。深度访谈20+行业专家，以Python/Pandas处理1000+份问卷，发布三份企业研究报告，累计覆盖15000+企业读者。',
           metrics: ['20+专家访谈', '1000+份问卷', '3篇研究报告', '1.5万+阅读量']

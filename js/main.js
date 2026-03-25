@@ -322,6 +322,11 @@ function renderProjects(items) {
   // Featured project
   const feat = items[0];
   setProjectContent('feat-label', 'feat-title', 'feat-desc', 'feat-tech', feat);
+  const featLink = document.getElementById('feat-link');
+  if (featLink) {
+    if (feat.link_href) featLink.href = feat.link_href;
+    if (feat.link_text) featLink.textContent = feat.link_text;
+  }
 
   // Secondary projects
   const secondaryItems = items.slice(1);
