@@ -20,7 +20,6 @@ const CONTENT = {
       desc_line3: '"The iPhone moment of AI is here."',
       desc_accent: '— Jensen Huang, NVIDIA CEO',
       cta_primary: 'View Projects',
-      cta_ghost: 'Download Résumé',
       scroll_hint: 'SCROLL'
     },
     journey: {
@@ -132,7 +131,6 @@ const CONTENT = {
       desc_line3: '「AI 的 iPhone 时刻，已经到来。」',
       desc_accent: '— 黄仁勋，英伟达 CEO',
       cta_primary: '查看项目',
-      cta_ghost: '下载简历',
       scroll_hint: '滚动'
     },
     journey: {
