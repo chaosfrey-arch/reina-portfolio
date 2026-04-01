@@ -553,15 +553,15 @@ const GitHub = (() => {
   };
 
   const FALLBACK = [
-    { full_name: 'langchain-ai/langchain',        description: 'Build context-aware reasoning applications.', stargazers_count: 97800, language: 'Python' },
-    { full_name: 'ollama/ollama',                 description: 'Get up and running with large language models.', stargazers_count: 115000, language: 'Go' },
-    { full_name: 'microsoft/autogen',             description: 'A programming framework for agentic AI.', stargazers_count: 38200, language: 'Python' },
-    { full_name: 'karpathy/minGPT',               description: 'A minimal PyTorch re-implementation of OpenAI GPT.', stargazers_count: 21100, language: 'Python' },
-    { full_name: 'deepseek-ai/DeepSeek-R1',       description: 'DeepSeek R1: reasoning model via reinforcement learning.', stargazers_count: 28400, language: 'Python' },
-    { full_name: 'huggingface/transformers',      description: 'State-of-the-art ML for Jax, PyTorch, TensorFlow.', stargazers_count: 137000, language: 'Python' },
-    { full_name: 'vllm-project/vllm',             description: 'Easy, fast and cheap LLM serving.', stargazers_count: 42500, language: 'Python' },
-    { full_name: 'ggerganov/llama.cpp',           description: 'LLM inference in C/C++.', stargazers_count: 72800, language: 'C++' },
-    { full_name: 'openai/openai-python',          description: 'The official Python library for the OpenAI API.', stargazers_count: 24100, language: 'Python' }
+    { full_name: 'langchain-ai/langchain',        html_url: 'https://github.com/langchain-ai/langchain',        description: 'Build context-aware reasoning applications.', stargazers_count: 97800, language: 'Python' },
+    { full_name: 'ollama/ollama',                 html_url: 'https://github.com/ollama/ollama',                 description: 'Get up and running with large language models.', stargazers_count: 115000, language: 'Go' },
+    { full_name: 'microsoft/autogen',             html_url: 'https://github.com/microsoft/autogen',             description: 'A programming framework for agentic AI.', stargazers_count: 38200, language: 'Python' },
+    { full_name: 'karpathy/minGPT',               html_url: 'https://github.com/karpathy/minGPT',               description: 'A minimal PyTorch re-implementation of OpenAI GPT.', stargazers_count: 21100, language: 'Python' },
+    { full_name: 'deepseek-ai/DeepSeek-R1',       html_url: 'https://github.com/deepseek-ai/DeepSeek-R1',       description: 'DeepSeek R1: reasoning model via reinforcement learning.', stargazers_count: 28400, language: 'Python' },
+    { full_name: 'huggingface/transformers',      html_url: 'https://github.com/huggingface/transformers',      description: 'State-of-the-art ML for Jax, PyTorch, TensorFlow.', stargazers_count: 137000, language: 'Python' },
+    { full_name: 'vllm-project/vllm',             html_url: 'https://github.com/vllm-project/vllm',             description: 'Easy, fast and cheap LLM serving.', stargazers_count: 42500, language: 'Python' },
+    { full_name: 'ggerganov/llama.cpp',           html_url: 'https://github.com/ggerganov/llama.cpp',           description: 'LLM inference in C/C++.', stargazers_count: 72800, language: 'C++' },
+    { full_name: 'openai/openai-python',          html_url: 'https://github.com/openai/openai-python',          description: 'The official Python library for the OpenAI API.', stargazers_count: 24100, language: 'Python' }
   ];
 
   function init() {
@@ -620,8 +620,9 @@ const GitHub = (() => {
       const stars = formatStars(r.stargazers_count);
       const lang  = r.language || 'Unknown';
       const color = LANG_COLORS[lang] || LANG_COLORS.default;
+      const url = r.html_url || `https://github.com/${r.full_name}`;
       return `
-        <div class="repo-card" style="transition-delay:${i * 45}ms">
+        <a class="repo-card" href="${url}" target="_blank" rel="noopener noreferrer" style="transition-delay:${i * 45}ms">
           <div class="repo-name">
             <span class="repo-owner">${owner}</span>
             <span class="repo-repo">${repo}</span>
@@ -634,7 +635,7 @@ const GitHub = (() => {
               ${lang}
             </span>
           </div>
-        </div>
+        </a>
       `;
     }).join('');
 

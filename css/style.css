@@ -1048,6 +1048,10 @@ main { position: relative; z-index: var(--z-base); }
 }
 
 .repo-card {
+  display: block;
+  text-decoration: none;
+  color: inherit;
+  cursor: pointer;
   border: 1px solid var(--border);
   border-radius: 10px;
   padding: var(--s5) var(--s6);
