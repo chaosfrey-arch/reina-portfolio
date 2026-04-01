@@ -11,7 +11,7 @@ const CONTENT = {
       toggle: 'EN'
     },
     hero: {
-      eyebrow: 'Durham · ex-Baidu · 2026',
+      eyebrow: 'Durham · AI Product Manager · 2026',
       name_zh: '贺睿',
       name_sep: '/',
       name_en: 'Reina',
@@ -37,8 +37,8 @@ const CONTENT = {
         },
         {
           date: '2025.05 — 2025.09',
-          org: 'Baidu · ACG Business Group',
-          role: 'AI Product Manager — Financial Intelligent Customer Service',
+          org: 'Tech Company',
+          role: 'AI Product Manager',
           body: 'Designed multi-turn dialogue systems for loan progress queries at scale. Architected intent decomposition flows and clarification strategies that fundamentally changed the service economics.',
           metrics: ['85% → 35% Transfer Rate', '60%+ Auto-Resolution', '30% Drop-off Reduction', '100% Path Coverage']
         },
@@ -123,7 +123,7 @@ const CONTENT = {
       toggle: 'CN'
     },
     hero: {
-      eyebrow: '杜伦大学 · 前百度 · 2026',
+      eyebrow: '杜伦大学 · AI产品经理 · 2026',
       name_zh: '贺睿',
       name_sep: '/',
       name_en: 'Reina',
@@ -149,8 +149,8 @@ const CONTENT = {
         },
         {
           date: '2025.05 — 2025.09',
-          org: '百度 · ACG事业群',
-          role: 'AI产品经理 — 金融智能客服',
+          org: '互联网公司',
+          role: 'AI产品经理',
           body: '为贷款进度查询设计多轮对话系统。通过意图分解与澄清策略的精细化设计，从根本上重构了服务经济模型，实现关键指标的大幅跃升。',
           metrics: ['转接率 85%→35%', '自助解决率 60%+', '关键节点流失降低30%', '全路径监控覆盖100%']
         },
