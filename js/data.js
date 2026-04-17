@@ -71,6 +71,15 @@ const CONTENT = {
           link_href: 'GraviChoice_决策助手/index.html'
         },
         {
+          featured: true,
+          label: 'Featured · Growth × Multi-Agent',
+          title: 'Multi-Agent Growth Product System',
+          desc: 'Growth experiment platform orchestrated by LangGraph. 4 AI agents (Strategist→Executor→Analyst→Reviewer) run automated A/B tests on AARRR funnel with z-test + 95% CI, controlled by deterministic 3-tier gating (PASS/RETRY/STOP) to prevent hallucinations.',
+          tech: ['LangGraph', 'DeepSeek API', 'A/B Testing', 'scipy', 'Python'],
+          link_text: 'View Dashboard →',
+          link_href: 'https://chaosfrey-arch.github.io/growthlab-multi-agent/'
+        },
+        {
           label: 'Game · React · AI',
           title: 'Texas Hold\'em Pro',
           desc: '7-player Texas Hold\'em with AI opponents. Full game loop — chip tracking, blind structure, hand rankings, and a tutorial system. Built in React 18 via CDN, no build step.',
@@ -180,6 +189,15 @@ const CONTENT = {
           tech: ['Matter.js 0.19', 'GLM-5.0 API', '原生 JS', 'Vercel'],
           link_text: '查看项目 →',
           link_href: 'GraviChoice_决策助手/index.html'
+        },
+        {
+          featured: true,
+          label: '精选项目 · 增长 × Multi-Agent',
+          title: '多智能体增长产品系统',
+          desc: '基于 LangGraph 编排的多智能体增长实验平台。4个AI智能体（策略师→执行官→分析师→复盘官）自动运行A/B测试优化AARRR漏斗，z检验+95%置信区间，三级确定性门控（PASS/RETRY/STOP）防幻觉。',
+          tech: ['LangGraph', 'DeepSeek API', 'A/B Testing', 'scipy', 'Python'],
+          link_text: '查看Dashboard →',
+          link_href: 'https://chaosfrey-arch.github.io/growthlab-multi-agent/'
         },
         {
           label: '游戏 · React · AI',
