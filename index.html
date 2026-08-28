@@ -1,393 +1,187 @@
 <!DOCTYPE html>
-<html lang="en" data-version="2">
+<html lang="zh-CN">
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
-  <meta name="description" content="Reina / 贺睿 — AI Product Management, LLM Researcher, Decision Architect.">
-  <title>Reina · 贺睿 — AI Product Management</title>
+  <meta name="theme-color" content="#07101f">
+  <meta name="description" content="贺睿 Reina He 的 AI 产品经理个人主页：Agent 产品、多模态内容生成、模型评测与数据智能。">
+  <meta property="og:type" content="website">
+  <meta property="og:url" content="https://reina-portfolio.pages.dev/">
+  <meta property="og:title" content="贺睿 Reina He｜AI 产品经理 · Data Science">
+  <meta property="og:description" content="Agent 产品、多模态内容生成、模型评测与数据智能。">
+  <meta property="og:image" content="https://reina-portfolio.pages.dev/og.png">
+  <meta name="twitter:card" content="summary_large_image">
+  <meta name="twitter:title" content="贺睿 Reina He｜AI 产品经理 · Data Science">
+  <meta name="twitter:description" content="Agent 产品、多模态内容生成、模型评测与数据智能。">
+  <meta name="twitter:image" content="https://reina-portfolio.pages.dev/og.png">
+  <title>贺睿 Reina He｜AI 产品经理 · Data Science</title>
 
-  <!-- Preconnect for fonts -->
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-  <link href="https://fonts.googleapis.com/css2?family=Syne:wght@400;600;700;800&family=Outfit:wght@300;400;500;600&family=JetBrains+Mono:wght@400;500&family=Noto+Sans+SC:wght@300;400;500;700&display=swap" rel="stylesheet">
-
+  <link href="https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500;600;700&amp;family=JetBrains+Mono:wght@400;500;600&amp;family=Noto+Sans+SC:wght@400;500;600;700;800;900&amp;display=swap" rel="stylesheet">
   <link rel="stylesheet" href="css/style.css">
+  <script src="js/main.js" defer></script>
 </head>
 <body>
+  <div class="scroll-progress" aria-hidden="true"><span id="scroll-progress"></span></div>
 
-<!-- ══════════════════════════════════════════════════
-     CANVAS BACKGROUND
-══════════════════════════════════════════════════ -->
-<!-- Scroll progress bar -->
-<div class="scroll-progress" id="scroll-progress" aria-hidden="true"></div>
+  <header class="site-header" id="site-header">
+    <a class="brand" href="#top" aria-label="返回首页">RH<span>.</span></a>
+    <nav class="nav-links" aria-label="主导航">
+      <a href="#experience">经历</a>
+      <a href="#projects">项目</a>
+      <a href="#capabilities">能力</a>
+      <a href="#education">教育</a>
+    </nav>
+    <a class="header-contact" href="mailto:chaosfrey@gmail.com">联系我 <span>↗</span></a>
+  </header>
 
-<canvas id="bg-canvas" aria-hidden="true"></canvas>
-
-<!-- ══════════════════════════════════════════════════
-     NAVIGATION
-══════════════════════════════════════════════════ -->
-<nav class="nav" role="navigation" aria-label="Primary navigation">
-  <div class="nav-logo">HR</div>
-
-  <ul class="nav-links" role="list">
-    <li><a href="#journey"      class="nav-link" data-section="journey"      data-idx="0">Journey</a></li>
-    <li><a href="#projects"     class="nav-link" data-section="projects"     data-idx="1">Projects</a></li>
-    <li><a href="#llm-hub"      class="nav-link" data-section="llm-hub"      data-idx="2">LLM Hub</a></li>
-    <li><a href="#ai-feed"      class="nav-link" data-section="ai-feed"      data-idx="3">AI Feed</a></li>
-    <li><a href="#github-pulse" class="nav-link" data-section="github-pulse" data-idx="4">GitHub</a></li>
-  </ul>
-
-  <div class="lang-toggle" role="group" aria-label="Language toggle">
-    <button class="lang-btn active" data-lang="en" aria-label="Switch to English">EN</button>
-    <button class="lang-btn"        data-lang="zh" aria-label="切换至中文">CN</button>
-  </div>
-</nav>
-
-<!-- Section navigation dots -->
-<nav class="section-nav" aria-label="Section navigation" aria-hidden="true">
-  <div class="section-dot active" data-target="hero"         title="Hero"></div>
-  <div class="section-dot"        data-target="journey"      title="Journey"></div>
-  <div class="section-dot"        data-target="projects"     title="Projects"></div>
-  <div class="section-dot"        data-target="llm-hub"      title="LLM Hub"></div>
-  <div class="section-dot"        data-target="ai-feed"      title="AI Feed"></div>
-  <div class="section-dot"        data-target="github-pulse" title="GitHub Pulse"></div>
-</nav>
-
-<main>
-
-<!-- ══════════════════════════════════════════════════
-     § 0 — HERO
-══════════════════════════════════════════════════ -->
-<section id="hero" aria-labelledby="hero-heading">
-  <div class="hero-inner">
-
-    <!-- Left: text content -->
-    <div class="hero-text">
-      <div class="hero-eyebrow">
-        <span class="hero-eyebrow-line" aria-hidden="true"></span>
-        <span id="hero-eyebrow-text">Durham · ex-Baidu · 2026</span>
-      </div>
-
-      <h1 class="hero-name" id="hero-heading">
-        <span class="name-zh">贺睿</span>
-        <span class="name-en"><span class="name-sep" aria-hidden="true">/</span>Reina</span>
-      </h1>
-
-      <p class="hero-desc" id="hero-desc">
-        <span id="hero-desc-top">On the path to AGI — curious about what comes next.</span><br>
-        <span class="hero-desc-accent" id="hero-desc-accent">I build things to figure out why.</span>
-      </p>
-
-      <div class="hero-cta">
-        <a href="#projects" class="btn-primary">
-          <span id="cta-primary-text">View Projects</span>
-          <span aria-hidden="true">→</span>
-        </a>
-      </div>
-
-      <!-- Stats strip -->
-      <div class="hero-stats" aria-label="Key metrics">
-        <div class="stat-item">
-          <span class="stat-val mono" data-target="9">0</span>
-          <span class="stat-label" data-i18n="stat_models">Models Evaluated</span>
+  <main>
+    <section class="hero" id="top">
+      <div class="hero-grid" aria-hidden="true"></div>
+      <div class="hero-copy reveal">
+        <div class="eyebrow"><i></i> AI PRODUCT MANAGER · DATA SCIENCE</div>
+        <h1>把复杂的 AI 能力，<br>变成<span>可用、可评估、<br>可增长</span>的产品。</h1>
+        <p class="hero-intro">你好，我是贺睿 Reina。杜伦大学数据科学硕士在读，专注 Agent 产品、多模态内容生成与企业级 AI 解决方案。</p>
+        <div class="hero-actions">
+          <a class="button button-primary" href="#experience">查看我的经历 <span>↓</span></a>
+          <a class="button button-secondary" href="mailto:chaosfrey@gmail.com">发邮件给我</a>
         </div>
-        <div class="stat-divider" aria-hidden="true"></div>
-        <div class="stat-item">
-          <span class="stat-val mono" data-target="3">0</span>
-          <span class="stat-label" data-i18n="stat_reports">Reports Published</span>
-        </div>
-        <div class="stat-divider" aria-hidden="true"></div>
-        <div class="stat-item">
-          <span class="stat-val mono" data-target="15">0</span><span class="stat-unit accent">K+</span>
-          <span class="stat-label" data-i18n="stat_reads">Enterprise Reads</span>
-        </div>
-        <div class="stat-divider" aria-hidden="true"></div>
-        <div class="stat-item">
-          <span class="stat-val mono" data-target="82">0</span><span class="stat-unit accent">%</span>
-          <span class="stat-label" data-i18n="stat_acc">ML Accuracy</span>
+        <div class="company-proof">
+          <span>曾服务于</span><strong>Sand.AI</strong><i>×</i><strong>百度</strong><i>×</i><strong>京东</strong>
         </div>
       </div>
-    </div>
 
-    <!-- Right: photo -->
-    <div class="hero-photo-side" aria-hidden="true">
-      <div class="hero-photo-frame">
-        <img src="portrait.jpg" alt="贺睿 / Reina — portrait">
-        <div class="photo-corner tl"></div>
-        <div class="photo-corner tr"></div>
-        <div class="photo-corner bl"></div>
-        <div class="photo-corner br"></div>
-        <div class="photo-scan"></div>
-        <div class="photo-crosshair"></div>
+      <div class="portrait-column reveal reveal-delay">
+        <div class="portrait-frame">
+          <img src="portrait.jpg" alt="贺睿 Reina 的职业肖像">
+          <div class="portrait-corners" aria-hidden="true"></div>
+        </div>
+        <div class="portrait-label"><span>BASED IN</span><strong>Durham · CN</strong></div>
+        <div class="availability"><i></i> Open to 2027 opportunities</div>
       </div>
-      <div class="photo-meta">
-        <span class="mono">SUBJECT · REINA</span>
-        <span class="mono accent">// DURHAM · CN</span>
+    </section>
+
+    <section class="metrics" aria-label="核心成果">
+      <article><strong>16</strong><div><b>Agent Apps 上线</b><span>2 个月完成</span></div></article>
+      <article><strong>40万+</strong><div><b>积分消耗</b><span>商业化场景验证</span></div></article>
+      <article><strong>500+</strong><div><b>模型评测样本</b><span>图像 / 视频 / 编辑</span></div></article>
+      <article><strong>93.1%</strong><div><b>会话解决率</b><span>由 88.3% 提升</span></div></article>
+    </section>
+
+    <section class="section experience" id="experience">
+      <div class="section-heading reveal">
+        <div class="section-kicker"><span>01</span> EXPERIENCE</div>
+        <h2>从 0 到 1，<br>也从 1 到规模化增长。</h2>
+        <p>我关注的不只是 Agent “能不能跑”，更关注它是否稳定、可观测，以及是否真正创造业务价值。</p>
       </div>
-    </div>
 
-  </div>
-
-  <div class="hero-scroll" aria-hidden="true">
-    <div class="hero-scroll-line"></div>
-    <span>SCROLL</span>
-  </div>
-</section>
-
-<!-- ══════════════════════════════════════════════════
-     § 1 — THE JOURNEY
-══════════════════════════════════════════════════ -->
-<section id="journey" class="section" aria-labelledby="journey-heading">
-  <div class="section-header fade-up">
-    <div class="section-num" aria-hidden="true">01</div>
-    <h2 class="section-title" id="journey-heading">THE JOURNEY</h2>
-    <p class="section-subtitle" id="journey-subtitle">From business foundations to the frontier of AI product engineering.</p>
-  </div>
-
-  <div class="timeline" role="list" aria-label="Career timeline">
-    <div class="timeline-spine" aria-hidden="true"></div>
-    <div class="timeline-progress-bar" aria-hidden="true"></div>
-    <div id="timeline-items">
-      <!-- Populated by JS -->
-    </div>
-  </div>
-</section>
-
-<!-- ══════════════════════════════════════════════════
-     § 2 — PROJECT NEXUS
-══════════════════════════════════════════════════ -->
-<section id="projects" class="section" aria-labelledby="projects-heading">
-  <div class="section-header fade-up">
-    <div class="section-num" aria-hidden="true">02</div>
-    <h2 class="section-title" id="projects-heading">PROJECT NEXUS</h2>
-    <p class="section-subtitle" id="projects-subtitle">Systems built at the intersection of physics, intelligence, and interaction.</p>
-  </div>
-
-  <div class="projects-stack">
-    <!-- Featured: GraviChoice -->
-    <article class="project-featured fade-up" aria-label="Featured project: GraviChoice">
-      <div class="project-body">
-        <div>
-          <div class="project-label" id="feat-label">Featured · Physics × AI</div>
-          <h3 class="project-title" id="feat-title">GraviChoice</h3>
-          <p class="project-desc" id="feat-desc">
-            A decision assistant that maps your pros and cons into weighted spheres, then lets physics decide.
-            GLM-5.0 analyzes semantic weight; Matter.js simulates gravity on a balance scale.
-          </p>
-          <div class="tech-chips" id="feat-tech">
-            <span class="tech-chip">Matter.js 0.19</span>
-            <span class="tech-chip">GLM-5.0 API</span>
-            <span class="tech-chip">Vanilla JS</span>
-            <span class="tech-chip">Vercel</span>
+      <div class="timeline">
+        <article class="experience-item reveal">
+          <div class="experience-meta"><time>2026.05 — 2026.09</time><span>Agent 产品实习生<br>视频生成</span></div>
+          <div class="experience-content">
+            <div class="experience-title"><h3>Sand.AI</h3><span>CURRENT</span></div>
+            <p class="experience-summary">围绕漫剧与商家广告场景，负责 Agent App 从需求发现、方案设计、Vibe Coding 到上线验证的数据闭环。</p>
+            <ul>
+              <li>推动 16 个 Agent App 上线，筛选出 4 个高潜场景；带动积分消耗 400,000+，自由画布复用率提升 15%，新用户转化率提升 2.3%。</li>
+              <li>设计 5 类专职 Sub-agent 的职责边界、任务交接 Schema 与结构化中间产物，优化 Skill Routing、工具调用与并发调度。</li>
+              <li>建立 500+ 标准样本测试集与“场景—模型”适配矩阵，核心场景创作完片率从 12.2% 提升至 19.6%，下载率提升至 63.3%。</li>
+            </ul>
+            <div class="tags"><span>Agent Harness</span><span>Workflow</span><span>Memory</span><span>Eval</span><span>Vibe Coding</span></div>
           </div>
-        </div>
-        <a href="#" class="project-link" id="feat-link">View Project →</a>
+        </article>
+
+        <article class="experience-item reveal">
+          <div class="experience-meta"><time>2025.05 — 2025.09</time><span>AI 产品实习生<br>智能客服 / Agent 平台</span></div>
+          <div class="experience-content">
+            <div class="experience-title"><h3>百度</h3></div>
+            <p class="experience-summary">负责企业级 Agent 搭建平台的开发者体验，以及金融客服多 Agent 解决方案设计与效果治理。</p>
+            <ul>
+              <li>设计贷款、还款、理财 3 个核心场景的意图边界、路由规则、置信度阈值与多轮对话流，覆盖约 65% 用户咨询量。</li>
+              <li>串联 RAG、工具调用、异常兜底与人工转接，推动核心场景会话解决率由 88.3% 提升至 93.1%。</li>
+              <li>建设节点级可观测埋点，打通日志、Bad Case、测试集与版本评测，形成“发现—归因—迭代—验证”数据飞轮。</li>
+            </ul>
+            <div class="tags"><span>Multi-Agent</span><span>RAG</span><span>Prompt</span><span>可观测性</span><span>Bad Case 治理</span></div>
+          </div>
+        </article>
+
+        <article class="experience-item reveal">
+          <div class="experience-meta"><time>2022.07 — 2022.10</time><span>数据分析实习生</span></div>
+          <div class="experience-content">
+            <div class="experience-title"><h3>京东</h3></div>
+            <p class="experience-summary">面向人才盘点与培养计划，完成多源数据治理、核心指标建设与周期性分析。</p>
+            <ul>
+              <li>整合岗位、绩效、潜力评估与培养记录，搭建参与率、完课率、转化率和满意度等核心指标。</li>
+              <li>结合行为数据与问卷反馈完成问题归因，沉淀标准化数据模板与统一统计口径。</li>
+            </ul>
+            <div class="tags"><span>数据治理</span><span>指标体系</span><span>业务分析</span><span>策略跟踪</span></div>
+          </div>
+        </article>
+      </div>
+    </section>
+
+    <section class="section projects" id="projects">
+      <div class="section-heading reveal">
+        <div class="section-kicker"><span>02</span> SELECTED WORK</div>
+        <h2>把能力封装成<br>用户能完成的任务。</h2>
+        <p>从场景调研、任务链路到工具编排和上线数据，我以 Owner 视角推动完整闭环。</p>
       </div>
 
-      <!-- Physics scale SVG animation -->
-      <div class="project-canvas" aria-hidden="true">
-        <svg class="physics-scale" viewBox="0 0 300 260" fill="none" xmlns="http://www.w3.org/2000/svg">
-          <!-- Pivot post -->
-          <rect x="148" y="80" width="4" height="120" fill="oklch(35% 0.025 255)"/>
-          <!-- Base -->
-          <rect x="100" y="198" width="100" height="4" rx="2" fill="oklch(35% 0.025 255)"/>
-          <!-- Beam group (animated) -->
-          <g class="scale-beam" transform-origin="150 90">
-            <rect x="60" y="88" width="180" height="3" rx="1.5" fill="oklch(72% 0.16 48)"/>
-            <!-- Left chain -->
-            <line x1="80"  y1="91" x2="80"  y2="138" stroke="oklch(48% 0.012 255)" stroke-width="1.2"/>
-            <!-- Right chain -->
-            <line x1="220" y1="91" x2="220" y2="138" stroke="oklch(48% 0.012 255)" stroke-width="1.2"/>
-          </g>
-          <!-- Left pan (animated) -->
-          <g class="scale-pan-l" transform-origin="80 150">
-            <ellipse cx="80" cy="148" rx="28" ry="8" fill="oklch(20% 0.016 255)" stroke="oklch(35% 0.025 255)" stroke-width="1.2"/>
-            <!-- Weight balls -->
-            <circle cx="72" cy="138" r="9" fill="oklch(55% 0.12 48)" opacity="0.9"/>
-            <circle cx="88" cy="136" r="6" fill="oklch(55% 0.12 48)" opacity="0.7"/>
-          </g>
-          <!-- Right pan (animated) -->
-          <g class="scale-pan-r" transform-origin="220 150">
-            <ellipse cx="220" cy="148" rx="28" ry="8" fill="oklch(20% 0.016 255)" stroke="oklch(35% 0.025 255)" stroke-width="1.2"/>
-            <!-- Lighter weight -->
-            <circle cx="220" cy="138" r="7" fill="oklch(55% 0.12 48)" opacity="0.7"/>
-          </g>
-        </svg>
+      <div class="project-grid">
+        <article class="project-card reveal">
+          <div class="project-meta"><span>01</span><b>Sand.AI · 项目 Owner</b></div>
+          <h3>TVC / 广告成片<br>生成 Agent</h3>
+          <p>将商品信息、素材与营销诉求转化为可编辑广告内容，支持多方案生成并进入 Chat Canvas 继续调整。负责调研、方案、Skill / Tool 编排、AI Coding、调优与上线验证。</p>
+          <div class="project-stats"><span>300+ 商家 / 用户</span><span>93.7% 任务完成率</span><span>100,000+ 积分消耗</span></div>
+        </article>
+        <article class="project-card reveal">
+          <div class="project-meta"><span>02</span><b>OCR · 结构化解析 · Agent 分析</b></div>
+          <h3>广告数据分析<br>Agent</h3>
+          <p>支持商家上传投放数据，自动完成指标识别、异常定位、效果归因与优化建议生成，降低理解投放数据与使用专业工具的门槛。</p>
+          <div class="project-stats"><span>指标自动识别</span><span>异常定位</span><span>策略建议生成</span></div>
+        </article>
+        <article class="project-card reveal">
+          <div class="project-meta"><span>03</span><b>数据科学课题研究</b></div>
+          <h3>跨境商品定价<br>预测与弹性分析</h3>
+          <p>使用 SQL、Pandas 与特征工程构建价格弹性、竞品价差和季节指数；对比随机森林、XGBoost 与 LSTM，并用 SHAP 解释核心定价因子。</p>
+          <div class="project-stats"><span>85%+ 预测准确率</span><span>K-Fold 验证</span><span>Streamlit 可视化</span></div>
+        </article>
       </div>
-    </article>
+    </section>
 
-    <!-- Secondary: Texas Hold'em + ML Research -->
-    <div class="projects-secondary">
-      <article class="project-card fade-up delay-1">
-        <div class="project-label" id="proj-label-0">Game · React · AI</div>
-        <h3 class="project-title" id="proj-title-0">Texas Hold'em Pro</h3>
-        <p class="project-desc" id="proj-desc-0">
-          7-player Texas Hold'em with AI opponents. Full game loop — chip tracking, blind structure,
-          hand rankings, and a tutorial system. Built in React 18 via CDN, no build step.
-        </p>
-        <div class="tech-chips" id="proj-tech-0">
-          <span class="tech-chip">React 18</span>
-          <span class="tech-chip">Tailwind CSS</span>
-          <span class="tech-chip">Babel/JSX</span>
-        </div>
-      </article>
-
-      <article class="project-card fade-up delay-2">
-        <div class="project-label" id="proj-label-1">Research · ML · Streamlit</div>
-        <h3 class="project-title" id="proj-title-1">Academic Tendency Predictor</h3>
-        <p class="project-desc" id="proj-desc-1">
-          Random Forest vs XGBoost for predicting student outcomes. Feature importance via SHAP values.
-          82%+ accuracy with K-Fold validation. Deployed as interactive Streamlit app.
-        </p>
-        <div class="tech-chips" id="proj-tech-1">
-          <span class="tech-chip">XGBoost</span>
-          <span class="tech-chip">scikit-learn</span>
-          <span class="tech-chip">SHAP</span>
-          <span class="tech-chip">Streamlit</span>
-        </div>
-      </article>
-
-      <article class="project-card fade-up delay-3">
-        <div class="project-label" id="proj-label-2">Hardware · Robotics · Product</div>
-        <h3 class="project-title" id="proj-title-2">妙笔成 · Smart Writing Trainer</h3>
-        <p class="project-desc" id="proj-desc-2">
-          Intelligent writing training hardware + APP. EM &amp; pressure sensor fusion drives a 3-DOF
-          servo-controlled robotic arm for real-time posture correction (≤2mm precision).
-          Led product from user research (N=485) to full Axure prototypes for child &amp; supervisor apps.
-          <br><span style="opacity:0.6;font-size:0.85em;">🏆 互联网+ Provincial Award &nbsp;·&nbsp; 挑战杯 Innovation Prize</span>
-        </p>
-        <div class="tech-chips" id="proj-tech-2">
-          <span class="tech-chip">Sensor Fusion</span>
-          <span class="tech-chip">Servo / 3-DOF Arm</span>
-          <span class="tech-chip">Axure</span>
-          <span class="tech-chip">IoT</span>
-        </div>
-      </article>
-    </div>
-  </div>
-</section>
-
-<!-- ══════════════════════════════════════════════════
-     § 3 — LLM INTELLIGENCE HUB
-══════════════════════════════════════════════════ -->
-<section id="llm-hub" class="section" aria-labelledby="llm-heading">
-  <div class="section-header fade-up">
-    <div class="section-num" aria-hidden="true">03</div>
-    <h2 class="section-title" id="llm-heading">LLM INTELLIGENCE HUB</h2>
-    <p class="section-subtitle" id="llm-subtitle">Authoritative benchmark data from LMSYS Chatbot Arena, HuggingFace Open LLM Leaderboard, and LiveCodeBench.</p>
-  </div>
-
-  <div class="llm-grid">
-    <!-- Left: Table -->
-    <div>
-      <div class="llm-tabs" role="tablist">
-        <button class="llm-tab active" data-tab="arena" id="tab-arena" role="tab" aria-selected="true">Arena Elo</button>
-        <button class="llm-tab"        data-tab="bench" id="tab-bench" role="tab" aria-selected="false">Multi-Benchmark</button>
+    <section class="section capabilities" id="capabilities">
+      <div class="section-heading compact reveal">
+        <div class="section-kicker"><span>03</span> CAPABILITIES</div>
+        <h2>产品判断力 ×<br>数据与工程语言。</h2>
       </div>
-
-      <div class="table-wrap fade-up">
-        <table class="bench-table" aria-label="LLM benchmark comparison">
-          <thead>
-            <tr>
-              <th data-col="name">Model <span class="sort-arrow">↕</span></th>
-              <th>Org</th>
-              <th data-col="elo" class="sorted">Arena Elo <span class="sort-arrow">↓</span></th>
-              <th data-col="mmlu">MMLU <span class="sort-arrow">↕</span></th>
-              <th data-col="humaneval">HumanEval <span class="sort-arrow">↕</span></th>
-              <th data-col="math">MATH <span class="sort-arrow">↕</span></th>
-            </tr>
-          </thead>
-          <tbody id="llm-tbody">
-            <!-- Populated by JS -->
-          </tbody>
-        </table>
+      <div class="capability-grid">
+        <article class="capability-card reveal"><span>01</span><h3>AI 产品</h3><div><b>Agent 架构</b><b>Workflow</b><b>Skills / Tools</b><b>Memory</b><b>模型评测</b><b>Prompt Engineering</b></div></article>
+        <article class="capability-card reveal"><span>02</span><h3>数据能力</h3><div><b>Python</b><b>SQL</b><b>Pandas</b><b>scikit-learn</b><b>XGBoost</b><b>Tableau</b></div></article>
+        <article class="capability-card reveal"><span>03</span><h3>AI Coding</h3><div><b>Claude Code</b><b>Codex</b><b>Cursor</b><b>MCP</b><b>Hooks</b><b>n8n</b></div></article>
+        <article class="capability-card reveal"><span>04</span><h3>产品设计</h3><div><b>PRD</b><b>Axure</b><b>Figma</b><b>需求抽象</b><b>指标体系</b><b>实验验证</b></div></article>
       </div>
+    </section>
 
-      <p class="llm-footnote fade-up delay-2" id="llm-footnote">
-        Data sourced from LMSYS Chatbot Arena leaderboard, HuggingFace Open LLM Leaderboard, and published model technical reports.
-        Scores are approximate and reflect the state of publicly available benchmarks at time of collection.
-      </p>
-    </div>
-
-    <!-- Right: Radar Chart -->
-    <aside class="radar-panel fade-up delay-2" aria-label="Model capability radar chart">
-      <div class="radar-label" id="radar-label">Capability Radar</div>
-      <canvas id="radar-canvas" role="img" aria-label="Hexagonal radar chart comparing LLM capabilities across 6 dimensions"></canvas>
-      <div class="radar-legend" id="radar-legend" role="list" aria-label="Model legend — click to toggle">
-        <!-- Populated by JS -->
+    <section class="education" id="education">
+      <div class="education-heading reveal"><div class="section-kicker"><span>04</span> EDUCATION</div><h2>商业理解，<br>数据验证。</h2></div>
+      <div class="education-list">
+        <article class="reveal"><time>2025.09 — 2027.01</time><div><h3>杜伦大学 <span>Durham University</span></h3><p>数据科学 · 硕士</p><small>机器学习 · 文本挖掘 · 数据可视化 · AI 伦理</small></div></article>
+        <article class="reveal"><time>2019.09 — 2023.06</time><div><h3>中南林业科技大学</h3><p>工商管理 - 人力资源管理 · 本科</p><small>国家二等奖学金 · “互联网+”省级三等奖</small></div></article>
       </div>
-    </aside>
-  </div>
-</section>
+    </section>
 
-<!-- ══════════════════════════════════════════════════
-     § 4 — AI CURATED FEED
-══════════════════════════════════════════════════ -->
-<section id="ai-feed" class="section" aria-labelledby="feed-heading">
-  <div class="section-header fade-up">
-    <div class="section-num" aria-hidden="true">04</div>
-    <h2 class="section-title" id="feed-heading">AI CURATED FEED</h2>
-    <p class="section-subtitle" id="feed-subtitle">Thinkers, builders, and voices shaping the intelligence frontier. Kept in original language.</p>
-  </div>
+    <section class="contact" id="contact">
+      <div class="contact-orbit" aria-hidden="true"></div>
+      <p>LET&apos;S BUILD SOMETHING USEFUL</p>
+      <h2>有值得落地的 AI 问题？<br><span>我们聊聊。</span></h2>
+      <a href="mailto:chaosfrey@gmail.com">chaosfrey@gmail.com <span>↗</span></a>
+    </section>
+  </main>
 
-  <div class="feed-block">
-    <div class="feed-heading" id="feed-heading-people">Thought Leaders</div>
-    <div class="thinkers-grid" id="thinkers-grid" role="list">
-      <!-- Populated by JS -->
-    </div>
-  </div>
-
-  <div class="feed-block">
-    <div class="feed-heading" id="feed-heading-podcasts">Essential Listening</div>
-    <div class="podcast-list" id="podcast-list" role="list">
-      <!-- Populated by JS -->
-    </div>
-  </div>
-</section>
-
-<!-- ══════════════════════════════════════════════════
-     § 5 — GITHUB PULSE
-══════════════════════════════════════════════════ -->
-<section id="github-pulse" class="section" aria-labelledby="github-heading">
-  <div class="section-header fade-up">
-    <div class="section-num" aria-hidden="true">05</div>
-    <h2 class="section-title" id="github-heading">GITHUB PULSE</h2>
-    <p class="section-subtitle" id="github-subtitle">Trending AI repositories, live from the GitHub API.</p>
-  </div>
-
-  <div class="pulse-header">
-    <div class="live-indicator">
-      <div class="live-dot" aria-hidden="true"></div>
-      <span id="live-label">LIVE DATA</span>
-    </div>
-  </div>
-
-  <div class="pulse-tabs" role="tablist">
-    <button class="pulse-tab active" data-topic="llm"        id="tab-llm"   role="tab">LLM</button>
-    <button class="pulse-tab"        data-topic="agent"      id="tab-agent" role="tab">Agents</button>
-    <button class="pulse-tab"        data-topic="multimodal" id="tab-mm"    role="tab">Multimodal</button>
-  </div>
-
-  <div class="repos-grid" id="repos-grid" aria-live="polite" aria-label="GitHub trending repositories">
-    <!-- Populated by JS -->
-  </div>
-</section>
-
-</main>
-
-<!-- ══════════════════════════════════════════════════
-     FOOTER
-══════════════════════════════════════════════════ -->
-<footer role="contentinfo">
-  <p class="footer-copy" id="footer-copy">© 2026 He Rui · Built with precision</p>
-  <nav class="footer-links" aria-label="Contact links">
-    <a href="mailto:chaosfrey@gmail.com" class="footer-link">chaosfrey@gmail.com</a>
-    <a href="https://github.com/chaosfrey-arch" class="footer-link" target="_blank" rel="noopener">GitHub</a>
-  </nav>
-</footer>
-
-<!-- Scripts — data first, then app -->
-<script src="js/data.js"></script>
-<script src="js/main.js"></script>
+  <footer>
+    <span>© <span id="year">2026</span> 贺睿 Reina He</span>
+    <span>AI Product · Agent · Data Science</span>
+    <div><a href="https://github.com/chaosfrey-arch" target="_blank" rel="noreferrer">GitHub ↗</a><a href="#top">返回顶部 ↑</a></div>
+  </footer>
 </body>
 </html>
