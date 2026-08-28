@@ -3,190 +3,239 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
-  <meta name="theme-color" content="#07101f">
-  <meta name="description" content="贺睿 Reina He 的 AI 产品经理个人主页：Agent 产品、多模态内容生成、模型评测与数据智能。">
+  <meta name="theme-color" content="#08111f">
+  <meta name="description" content="贺睿 Reina He 的个人主页：AI 产品、Agent、多模态内容生成与数据科学。">
   <meta property="og:type" content="website">
   <meta property="og:url" content="https://reina-portfolio.pages.dev/">
-  <meta property="og:title" content="贺睿 Reina He｜AI 产品经理 · Data Science">
-  <meta property="og:description" content="Agent 产品、多模态内容生成、模型评测与数据智能。">
-  <meta property="og:image" content="https://reina-portfolio.pages.dev/og.png">
+  <meta property="og:title" content="贺睿 Reina He｜AI Product Manager">
+  <meta property="og:description" content="Turning complex AI into products people can use, measure and grow.">
+  <meta property="og:image" content="https://reina-portfolio.pages.dev/og-v2.png">
   <meta name="twitter:card" content="summary_large_image">
-  <meta name="twitter:title" content="贺睿 Reina He｜AI 产品经理 · Data Science">
-  <meta name="twitter:description" content="Agent 产品、多模态内容生成、模型评测与数据智能。">
-  <meta name="twitter:image" content="https://reina-portfolio.pages.dev/og.png">
-  <title>贺睿 Reina He｜AI 产品经理 · Data Science</title>
+  <meta name="twitter:title" content="贺睿 Reina He｜AI Product Manager">
+  <meta name="twitter:description" content="Turning complex AI into products people can use, measure and grow.">
+  <meta name="twitter:image" content="https://reina-portfolio.pages.dev/og-v2.png">
+  <title>贺睿 Reina He｜AI Product Manager</title>
 
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-  <link href="https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500;600;700&amp;family=JetBrains+Mono:wght@400;500;600&amp;family=Noto+Sans+SC:wght@400;500;600;700;800;900&amp;display=swap" rel="stylesheet">
-  <link rel="stylesheet" href="css/style.css">
-  <script src="js/main.js" defer></script>
+  <link href="https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500;600;700&amp;family=JetBrains+Mono:wght@400;500;600&amp;family=Noto+Sans+SC:wght@400;500;600;700;800&amp;display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="css/style.css?v=20260827">
+  <script src="js/main.js?v=20260827" defer></script>
 </head>
 <body>
+  <div class="cursor-glow" aria-hidden="true"></div>
   <div class="scroll-progress" aria-hidden="true"><span id="scroll-progress"></span></div>
 
   <header class="site-header" id="site-header">
     <a class="brand" href="#top" aria-label="返回首页">RH<span>.</span></a>
     <nav class="nav-links" aria-label="主导航">
-      <a href="#experience">经历</a>
-      <a href="#projects">项目</a>
-      <a href="#capabilities">能力</a>
-      <a href="#education">教育</a>
+      <a href="#experience" data-i18n="nav.experience">经历</a>
+      <a href="#projects" data-i18n="nav.projects">项目</a>
+      <a href="#capabilities" data-i18n="nav.capabilities">能力</a>
+      <a href="#education" data-i18n="nav.education">教育</a>
     </nav>
-    <a class="header-contact" href="mailto:chaosfrey@gmail.com">联系我 <span>↗</span></a>
+    <div class="header-actions">
+      <button class="language-toggle" id="language-toggle" type="button" aria-label="Switch to English"><span>中</span><b>EN</b></button>
+      <a class="header-contact" href="mailto:chaosfrey@gmail.com"><span data-i18n="nav.contact">联系</span><i>↗</i></a>
+    </div>
   </header>
 
   <main>
     <section class="hero" id="top">
       <div class="hero-grid" aria-hidden="true"></div>
+      <div class="hero-orb hero-orb-one" aria-hidden="true"></div>
+      <div class="hero-orb hero-orb-two" aria-hidden="true"></div>
+
       <div class="hero-copy reveal">
-        <div class="eyebrow"><i></i> AI PRODUCT MANAGER · DATA SCIENCE</div>
-        <h1>把复杂的 AI 能力，<br>变成<span>可用、可评估、<br>可增长</span>的产品。</h1>
-        <p class="hero-intro">你好，我是贺睿 Reina。杜伦大学数据科学硕士在读，专注 Agent 产品、多模态内容生成与企业级 AI 解决方案。</p>
+        <div class="eyebrow"><i></i><span data-i18n="hero.eyebrow">AI PRODUCT · AGENT · DATA</span></div>
+        <h1 data-i18n-html="hero.title">让 AI 产品<br><span>真正工作。</span></h1>
+        <p class="hero-intro" data-i18n="hero.intro">你好，我是贺睿 Reina。我把复杂的模型能力，变成清晰、可测量、能增长的用户体验。</p>
+
         <div class="hero-actions">
-          <a class="button button-primary" href="#experience">查看我的经历 <span>↓</span></a>
-          <a class="button button-secondary" href="mailto:chaosfrey@gmail.com">发邮件给我</a>
+          <a class="button button-primary magnetic" href="#projects"><span data-i18n="hero.work">查看作品</span><i>↓</i></a>
+          <a class="button button-vidmuse magnetic" href="https://vidmuse.ai/en/apps" target="_blank" rel="noopener noreferrer">
+            <span class="button-pulse" aria-hidden="true"></span>
+            <span><small data-i18n="hero.building">CURRENTLY BUILDING</small><b>Vidmuse</b></span><i>↗</i>
+          </a>
         </div>
-        <div class="company-proof">
-          <span>曾服务于</span><strong>Sand.AI</strong><i>×</i><strong>百度</strong><i>×</i><strong>京东</strong>
+
+        <div class="company-proof" aria-label="工作经历">
+          <span data-i18n="hero.proof">EXPERIENCE ACROSS</span>
+          <div><a href="https://vidmuse.ai/en" target="_blank" rel="noopener noreferrer">Sand.AI / Vidmuse ↗</a><b>Baidu</b><b>JD.com</b></div>
         </div>
       </div>
 
-      <div class="portrait-column reveal reveal-delay">
-        <div class="portrait-frame">
-          <img src="portrait.jpg" alt="贺睿 Reina 的职业肖像">
-          <div class="portrait-corners" aria-hidden="true"></div>
+      <div class="hero-visual reveal reveal-delay">
+        <div class="portrait-card tilt-card" data-tilt>
+          <div class="portrait-frame">
+            <img src="portrait.jpg" alt="贺睿 Reina He 的职业肖像">
+            <div class="image-scan" aria-hidden="true"></div>
+          </div>
+          <div class="portrait-topline"><span>REINA HE</span><span>01 / 04</span></div>
+          <div class="portrait-bottomline"><span data-i18n="hero.location">DURHAM · CHINA</span><b><i></i><span data-i18n="hero.available">OPEN TO 2027</span></b></div>
         </div>
-        <div class="portrait-label"><span>BASED IN</span><strong>Durham · CN</strong></div>
-        <div class="availability"><i></i> Open to 2027 opportunities</div>
+
+        <aside class="focus-lab" aria-label="Product thinking interactive card">
+          <div class="focus-head"><span data-i18n="focus.label">PRODUCT LOOP</span><b>INTERACTIVE</b></div>
+          <div class="focus-tabs" role="tablist" aria-label="Product loop">
+            <button class="focus-tab active" type="button" data-step="0" role="tab" aria-selected="true"><span>01</span><b data-i18n="focus.step1">发现</b></button>
+            <button class="focus-tab" type="button" data-step="1" role="tab" aria-selected="false"><span>02</span><b data-i18n="focus.step2">编排</b></button>
+            <button class="focus-tab" type="button" data-step="2" role="tab" aria-selected="false"><span>03</span><b data-i18n="focus.step3">验证</b></button>
+          </div>
+          <div class="focus-panel" aria-live="polite">
+            <div><strong id="focus-value">WHY</strong><span id="focus-title">找到真问题</span></div>
+            <p id="focus-copy">从用户任务与业务目标出发，不为 AI 而 AI。</p>
+          </div>
+        </aside>
       </div>
     </section>
 
     <section class="metrics" aria-label="核心成果">
-      <article><strong>16</strong><div><b>Agent Apps 上线</b><span>2 个月完成</span></div></article>
-      <article><strong>40万+</strong><div><b>积分消耗</b><span>商业化场景验证</span></div></article>
-      <article><strong>500+</strong><div><b>模型评测样本</b><span>图像 / 视频 / 编辑</span></div></article>
-      <article><strong>93.1%</strong><div><b>会话解决率</b><span>由 88.3% 提升</span></div></article>
+      <article class="reveal"><strong class="metric-value" data-count="16">0</strong><div><b data-i18n="metrics.apps">Agent Apps</b><span data-i18n="metrics.appsSub">两个月上线</span></div></article>
+      <article class="reveal"><strong><span class="metric-value" data-count="40">0</span><i data-i18n="metrics.wan">万+</i></strong><div><b data-i18n="metrics.credits">积分消耗</b><span data-i18n="metrics.creditsSub">验证真实需求</span></div></article>
+      <article class="reveal"><strong><span class="metric-value" data-count="500">0</span><i>+</i></strong><div><b data-i18n="metrics.samples">评测样本</b><span data-i18n="metrics.samplesSub">图像 / 视频 / 编辑</span></div></article>
+      <article class="reveal"><strong><span class="metric-value" data-count="93.1" data-decimals="1">0</span><i>%</i></strong><div><b data-i18n="metrics.resolve">会话解决率</b><span data-i18n="metrics.resolveSub">由 88.3% 提升</span></div></article>
     </section>
+
+    <div class="marquee" aria-hidden="true">
+      <div><span>AGENT PRODUCT</span><i>✦</i><span>MULTIMODAL AI</span><i>✦</i><span>PRODUCT GROWTH</span><i>✦</i><span>DATA SCIENCE</span><i>✦</i><span>AGENT PRODUCT</span><i>✦</i><span>MULTIMODAL AI</span><i>✦</i><span>PRODUCT GROWTH</span><i>✦</i><span>DATA SCIENCE</span><i>✦</i></div>
+    </div>
 
     <section class="section experience" id="experience">
       <div class="section-heading reveal">
         <div class="section-kicker"><span>01</span> EXPERIENCE</div>
-        <h2>从 0 到 1，<br>也从 1 到规模化增长。</h2>
-        <p>我关注的不只是 Agent “能不能跑”，更关注它是否稳定、可观测，以及是否真正创造业务价值。</p>
+        <h2 data-i18n-html="experience.title">做出来，<br><span>再做得更好。</span></h2>
+        <p data-i18n="experience.intro">从需求、编排到评测与增长，我负责完整闭环。点击每段经历查看关键成果。</p>
       </div>
 
-      <div class="timeline">
-        <article class="experience-item reveal">
-          <div class="experience-meta"><time>2026.05 — 2026.09</time><span>Agent 产品实习生<br>视频生成</span></div>
-          <div class="experience-content">
-            <div class="experience-title">
-              <h3>Sand.AI</h3>
-              <span>CURRENT</span>
-              <a class="experience-link" href="https://vidmuse.ai/en" target="_blank" rel="noopener noreferrer" aria-label="访问 Vidmuse 官方网站">Vidmuse <span aria-hidden="true">↗</span></a>
+      <div class="experience-list">
+        <details class="experience-item reveal" open>
+          <summary>
+            <div class="experience-index">01</div>
+            <div class="experience-company"><h3>Sand.AI</h3><a href="https://vidmuse.ai/en" target="_blank" rel="noopener noreferrer" onclick="event.stopPropagation()">Vidmuse ↗</a></div>
+            <div class="experience-role"><b data-i18n="experience.sandRole">Agent 产品实习生</b><span data-i18n="experience.sandArea">视频生成 · Agent Apps</span></div>
+            <time>2026.05 — 2026.09</time>
+            <span class="experience-arrow">↘</span>
+          </summary>
+          <div class="experience-panel">
+            <p data-i18n="experience.sandSummary">负责 Agent App 从场景发现、方案设计、Vibe Coding 到上线验证。</p>
+            <div class="achievement-grid">
+              <article><strong>16 → 4</strong><span data-i18n="experience.sandA1">上线 16 个 App，筛出 4 个高潜场景</span></article>
+              <article><strong>12.2 → 19.6%</strong><span data-i18n="experience.sandA2">用 500+ 样本提升核心场景完片率</span></article>
+              <article><strong>+15% / +2.3%</strong><span data-i18n="experience.sandA3">提升画布复用率与新用户转化</span></article>
             </div>
-            <p class="experience-summary">围绕漫剧与商家广告场景，负责 Agent App 从需求发现、方案设计、Vibe Coding 到上线验证的数据闭环。</p>
-            <ul>
-              <li>推动 16 个 Agent App 上线，筛选出 4 个高潜场景；带动积分消耗 400,000+，自由画布复用率提升 15%，新用户转化率提升 2.3%。</li>
-              <li>设计 5 类专职 Sub-agent 的职责边界、任务交接 Schema 与结构化中间产物，优化 Skill Routing、工具调用与并发调度。</li>
-              <li>建立 500+ 标准样本测试集与“场景—模型”适配矩阵，核心场景创作完片率从 12.2% 提升至 19.6%，下载率提升至 63.3%。</li>
-            </ul>
             <div class="tags"><span>Agent Harness</span><span>Workflow</span><span>Memory</span><span>Eval</span><span>Vibe Coding</span></div>
           </div>
-        </article>
+        </details>
 
-        <article class="experience-item reveal">
-          <div class="experience-meta"><time>2025.05 — 2025.09</time><span>AI 产品实习生<br>智能客服 / Agent 平台</span></div>
-          <div class="experience-content">
-            <div class="experience-title"><h3>百度</h3></div>
-            <p class="experience-summary">负责企业级 Agent 搭建平台的开发者体验，以及金融客服多 Agent 解决方案设计与效果治理。</p>
-            <ul>
-              <li>设计贷款、还款、理财 3 个核心场景的意图边界、路由规则、置信度阈值与多轮对话流，覆盖约 65% 用户咨询量。</li>
-              <li>串联 RAG、工具调用、异常兜底与人工转接，推动核心场景会话解决率由 88.3% 提升至 93.1%。</li>
-              <li>建设节点级可观测埋点，打通日志、Bad Case、测试集与版本评测，形成“发现—归因—迭代—验证”数据飞轮。</li>
-            </ul>
-            <div class="tags"><span>Multi-Agent</span><span>RAG</span><span>Prompt</span><span>可观测性</span><span>Bad Case 治理</span></div>
+        <details class="experience-item reveal">
+          <summary>
+            <div class="experience-index">02</div>
+            <div class="experience-company"><h3 data-i18n="experience.baidu">百度</h3></div>
+            <div class="experience-role"><b data-i18n="experience.baiduRole">AI 产品实习生</b><span data-i18n="experience.baiduArea">智能客服 · Agent 平台</span></div>
+            <time>2025.05 — 2025.09</time>
+            <span class="experience-arrow">↘</span>
+          </summary>
+          <div class="experience-panel">
+            <p data-i18n="experience.baiduSummary">负责企业级 Agent 平台体验与金融客服多 Agent 方案。</p>
+            <div class="achievement-grid two">
+              <article><strong>65%</strong><span data-i18n="experience.baiduA1">覆盖贷款、还款、理财核心咨询</span></article>
+              <article><strong>88.3 → 93.1%</strong><span data-i18n="experience.baiduA2">通过路由、RAG 与兜底提升解决率</span></article>
+            </div>
+            <div class="tags"><span>Multi-Agent</span><span>RAG</span><span>Routing</span><span>Observability</span></div>
           </div>
-        </article>
+        </details>
 
-        <article class="experience-item reveal">
-          <div class="experience-meta"><time>2022.07 — 2022.10</time><span>数据分析实习生</span></div>
-          <div class="experience-content">
-            <div class="experience-title"><h3>京东</h3></div>
-            <p class="experience-summary">面向人才盘点与培养计划，完成多源数据治理、核心指标建设与周期性分析。</p>
-            <ul>
-              <li>整合岗位、绩效、潜力评估与培养记录，搭建参与率、完课率、转化率和满意度等核心指标。</li>
-              <li>结合行为数据与问卷反馈完成问题归因，沉淀标准化数据模板与统一统计口径。</li>
-            </ul>
-            <div class="tags"><span>数据治理</span><span>指标体系</span><span>业务分析</span><span>策略跟踪</span></div>
+        <details class="experience-item reveal">
+          <summary>
+            <div class="experience-index">03</div>
+            <div class="experience-company"><h3 data-i18n="experience.jd">京东</h3></div>
+            <div class="experience-role"><b data-i18n="experience.jdRole">数据分析实习生</b><span data-i18n="experience.jdArea">人才数据 · 指标体系</span></div>
+            <time>2022.07 — 2022.10</time>
+            <span class="experience-arrow">↘</span>
+          </summary>
+          <div class="experience-panel">
+            <p data-i18n="experience.jdSummary">整合多源人才数据，建立统一口径与周期性分析。</p>
+            <div class="achievement-grid two">
+              <article><strong>4×</strong><span data-i18n="experience.jdA1">打通岗位、绩效、潜力与培养记录</span></article>
+              <article><strong>1 LOOP</strong><span data-i18n="experience.jdA2">用行为与问卷数据形成问题归因闭环</span></article>
+            </div>
+            <div class="tags"><span>Data Governance</span><span>Metrics</span><span>Business Analysis</span></div>
           </div>
-        </article>
+        </details>
       </div>
     </section>
 
     <section class="section projects" id="projects">
       <div class="section-heading reveal">
         <div class="section-kicker"><span>02</span> SELECTED WORK</div>
-        <h2>把能力封装成<br>用户能完成的任务。</h2>
-        <p>从场景调研、任务链路到工具编排和上线数据，我以 Owner 视角推动完整闭环。</p>
+        <h2 data-i18n-html="projects.title">把能力，<br><span>变成任务。</span></h2>
+        <p data-i18n="projects.intro">少讲功能，多看用户最终能完成什么。</p>
       </div>
 
       <div class="project-grid">
-        <article class="project-card reveal">
-          <div class="project-meta"><span>01</span><b>Sand.AI · 项目 Owner</b></div>
-          <h3>TVC / 广告成片<br>生成 Agent</h3>
-          <p>将商品信息、素材与营销诉求转化为可编辑广告内容，支持多方案生成并进入 Chat Canvas 继续调整。负责调研、方案、Skill / Tool 编排、AI Coding、调优与上线验证。</p>
-          <a class="project-link" href="https://vidmuse.ai/en/apps" target="_blank" rel="noopener noreferrer" aria-label="打开 Vidmuse App Hub">打开 Vidmuse APP <span aria-hidden="true">↗</span></a>
-          <div class="project-stats"><span>300+ 商家 / 用户</span><span>93.7% 任务完成率</span><span>100,000+ 积分消耗</span></div>
+        <article class="project-card project-featured reveal" data-tilt>
+          <div class="project-top"><span>01 / VIDMUSE</span><b data-i18n="projects.owner">PRODUCT OWNER</b></div>
+          <div class="project-body">
+            <p class="project-label" data-i18n="projects.featuredLabel">AI AD CREATION</p>
+            <h3 data-i18n-html="projects.featuredTitle">从商品素材到<br>可编辑广告成片</h3>
+            <p data-i18n="projects.featuredCopy">输入商品与营销诉求，Agent 自动编排脚本、画面与生成工具，并在 Canvas 中继续编辑。</p>
+          </div>
+          <div class="project-bottom">
+            <div><span>300+</span><small data-i18n="projects.users">用户 / 商家</small></div>
+            <div><span>93.7%</span><small data-i18n="projects.complete">任务完成率</small></div>
+            <a class="project-link magnetic" href="https://vidmuse.ai/en/apps" target="_blank" rel="noopener noreferrer"><span data-i18n="projects.open">打开 Vidmuse APP</span><i>↗</i></a>
+          </div>
+          <div class="project-orbit" aria-hidden="true"><i></i></div>
         </article>
-        <article class="project-card reveal">
-          <div class="project-meta"><span>02</span><b>OCR · 结构化解析 · Agent 分析</b></div>
-          <h3>广告数据分析<br>Agent</h3>
-          <p>支持商家上传投放数据，自动完成指标识别、异常定位、效果归因与优化建议生成，降低理解投放数据与使用专业工具的门槛。</p>
-          <div class="project-stats"><span>指标自动识别</span><span>异常定位</span><span>策略建议生成</span></div>
+
+        <article class="project-card project-compact reveal" data-tilt>
+          <div class="project-top"><span>02 / AGENT</span><b>OCR + ANALYSIS</b></div>
+          <div class="project-body"><p class="project-label" data-i18n="projects.adLabel">DATA TO DECISION</p><h3 data-i18n-html="projects.adTitle">广告数据分析<br>Agent</h3><p data-i18n="projects.adCopy">自动识别指标、定位异常、归因效果并生成策略建议。</p></div>
+          <div class="project-tags"><span>OCR</span><span>Insight</span><span>Strategy</span></div>
         </article>
-        <article class="project-card reveal">
-          <div class="project-meta"><span>03</span><b>数据科学课题研究</b></div>
-          <h3>跨境商品定价<br>预测与弹性分析</h3>
-          <p>使用 SQL、Pandas 与特征工程构建价格弹性、竞品价差和季节指数；对比随机森林、XGBoost 与 LSTM，并用 SHAP 解释核心定价因子。</p>
-          <div class="project-stats"><span>85%+ 预测准确率</span><span>K-Fold 验证</span><span>Streamlit 可视化</span></div>
+
+        <article class="project-card project-compact project-light reveal" data-tilt>
+          <div class="project-top"><span>03 / DATA</span><b>PREDICTION</b></div>
+          <div class="project-body"><p class="project-label" data-i18n="projects.priceLabel">MODEL TO EXPLANATION</p><h3 data-i18n-html="projects.priceTitle">跨境定价预测<br>与弹性分析</h3><p data-i18n="projects.priceCopy">比较 RF、XGBoost 与 LSTM，并用 SHAP 解释核心定价因子。</p></div>
+          <div class="project-tags"><span>85%+</span><span>SHAP</span><span>Streamlit</span></div>
         </article>
       </div>
     </section>
 
     <section class="section capabilities" id="capabilities">
       <div class="section-heading compact reveal">
-        <div class="section-kicker"><span>03</span> CAPABILITIES</div>
-        <h2>产品判断力 ×<br>数据与工程语言。</h2>
+        <div class="section-kicker"><span>03</span> TOOLKIT</div>
+        <h2 data-i18n-html="capabilities.title">产品判断力，<br><span>数据与工程语言。</span></h2>
       </div>
       <div class="capability-grid">
-        <article class="capability-card reveal"><span>01</span><h3>AI 产品</h3><div><b>Agent 架构</b><b>Workflow</b><b>Skills / Tools</b><b>Memory</b><b>模型评测</b><b>Prompt Engineering</b></div></article>
-        <article class="capability-card reveal"><span>02</span><h3>数据能力</h3><div><b>Python</b><b>SQL</b><b>Pandas</b><b>scikit-learn</b><b>XGBoost</b><b>Tableau</b></div></article>
-        <article class="capability-card reveal"><span>03</span><h3>AI Coding</h3><div><b>Claude Code</b><b>Codex</b><b>Cursor</b><b>MCP</b><b>Hooks</b><b>n8n</b></div></article>
-        <article class="capability-card reveal"><span>04</span><h3>产品设计</h3><div><b>PRD</b><b>Axure</b><b>Figma</b><b>需求抽象</b><b>指标体系</b><b>实验验证</b></div></article>
+        <article class="capability-card reveal"><span>01</span><div><h3 data-i18n="capabilities.ai">AI 产品</h3><p>Agent Architecture / Workflow / Skills / Memory / Eval</p></div><i>↗</i></article>
+        <article class="capability-card reveal"><span>02</span><div><h3 data-i18n="capabilities.data">数据科学</h3><p>Python / SQL / Pandas / XGBoost / Tableau</p></div><i>↗</i></article>
+        <article class="capability-card reveal"><span>03</span><div><h3 data-i18n="capabilities.coding">AI Coding</h3><p>Codex / Claude Code / Cursor / MCP / n8n</p></div><i>↗</i></article>
+        <article class="capability-card reveal"><span>04</span><div><h3 data-i18n="capabilities.design">产品设计</h3><p>PRD / Figma / Metrics / Experiment / Research</p></div><i>↗</i></article>
       </div>
     </section>
 
     <section class="education" id="education">
-      <div class="education-heading reveal"><div class="section-kicker"><span>04</span> EDUCATION</div><h2>商业理解，<br>数据验证。</h2></div>
+      <div class="education-heading reveal"><div class="section-kicker"><span>04</span> EDUCATION</div><h2 data-i18n-html="education.title">商业理解，<br><span>数据验证。</span></h2></div>
       <div class="education-list">
-        <article class="reveal"><time>2025.09 — 2027.01</time><div><h3>杜伦大学 <span>Durham University</span></h3><p>数据科学 · 硕士</p><small>机器学习 · 文本挖掘 · 数据可视化 · AI 伦理</small></div></article>
-        <article class="reveal"><time>2019.09 — 2023.06</time><div><h3>中南林业科技大学</h3><p>工商管理 - 人力资源管理 · 本科</p><small>国家二等奖学金 · “互联网+”省级三等奖</small></div></article>
+        <article class="reveal"><span class="school-no">01</span><time>2025 — 2027</time><div><h3 data-i18n="education.durham">杜伦大学</h3><p>Durham University · <span data-i18n="education.master">数据科学硕士</span></p><small>Machine Learning · Text Mining · Visualization · AI Ethics</small></div></article>
+        <article class="reveal"><span class="school-no">02</span><time>2019 — 2023</time><div><h3 data-i18n="education.csuft">中南林业科技大学</h3><p data-i18n="education.bachelor">工商管理（人力资源管理）· 本科</p><small data-i18n="education.awards">国家二等奖学金 · “互联网+”省级三等奖</small></div></article>
       </div>
     </section>
 
     <section class="contact" id="contact">
-      <div class="contact-orbit" aria-hidden="true"></div>
-      <p>LET&apos;S BUILD SOMETHING USEFUL</p>
-      <h2>有值得落地的 AI 问题？<br><span>我们聊聊。</span></h2>
-      <a href="mailto:chaosfrey@gmail.com">chaosfrey@gmail.com <span>↗</span></a>
+      <div class="contact-rings" aria-hidden="true"><i></i><i></i><i></i></div>
+      <p data-i18n="contact.label">LET'S BUILD SOMETHING USEFUL</p>
+      <h2 data-i18n-html="contact.title">有值得落地的<br><span>AI 问题？</span></h2>
+      <a class="magnetic" href="mailto:chaosfrey@gmail.com"><span data-i18n="contact.action">和我聊聊</span><i>↗</i></a>
     </section>
   </main>
 
   <footer>
     <span>© <span id="year">2026</span> 贺睿 Reina He</span>
     <span>AI Product · Agent · Data Science</span>
-    <div><a href="https://github.com/chaosfrey-arch" target="_blank" rel="noreferrer">GitHub ↗</a><a href="#top">返回顶部 ↑</a></div>
+    <div><a href="https://github.com/chaosfrey-arch" target="_blank" rel="noreferrer">GitHub ↗</a><a href="#top" data-i18n="footer.top">返回顶部 ↑</a></div>
   </footer>
 </body>
 </html>
