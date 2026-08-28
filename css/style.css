@@ -93,6 +93,8 @@ a { color: inherit; text-decoration: none; }
 .experience-title { display: flex; align-items: center; gap: 13px; }
 .experience-title h3 { margin: -10px 0 10px; font-size: 36px; letter-spacing: -.045em; }
 .experience-title > span { padding: 4px 7px; background: rgba(112,228,161,.12); color: var(--green); border: 1px solid rgba(112,228,161,.28); font: 600 8px var(--font-mono); }
+.experience-link { margin: -10px 0 10px auto; color: #dce5f2; border-bottom: 1px solid rgba(220,229,242,.45); font: 600 10px var(--font-mono); letter-spacing: .04em; text-decoration: none; transition: color .2s ease, border-color .2s ease; }
+.experience-link:hover, .experience-link:focus-visible { color: var(--green); border-color: var(--green); }
 .experience-summary { max-width: 850px; margin: 0 0 16px; color: #dce5f2; font-size: 16px; line-height: 1.8; font-weight: 600; }
 .experience-content ul { max-width: 930px; margin: 0; padding-left: 20px; color: #9facbf; font-size: 13px; line-height: 1.85; }
 .experience-content li { margin: 10px 0; padding-left: 7px; }
@@ -111,6 +113,8 @@ a { color: inherit; text-decoration: none; }
 .project-meta b { max-width: 190px; text-align: right; line-height: 1.5; }
 .project-card h3 { margin: 75px 0 20px; font-size: 31px; line-height: 1.2; letter-spacing: -.04em; }
 .project-card > p { margin: 0; color: #5e6879; font-size: 13px; line-height: 1.85; }
+.project-link { width: fit-content; margin-top: 24px; padding-bottom: 4px; color: var(--ink); border-bottom: 1px solid rgba(7,16,31,.45); font: 700 10px var(--font-mono); letter-spacing: .04em; text-decoration: none; position: relative; z-index: 1; transition: color .2s ease, border-color .2s ease; }
+.project-link:hover, .project-link:focus-visible { color: #315fcc; border-color: #315fcc; }
 .project-stats { margin-top: auto; display: flex; gap: 7px; flex-wrap: wrap; position: relative; z-index: 1; }
 .project-stats span { padding: 7px 9px; border: 1px solid rgba(7,16,31,.22); background: rgba(255,255,255,.4); font-size: 9px; font-weight: 700; }
 
